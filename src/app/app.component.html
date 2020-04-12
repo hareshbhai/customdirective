@@ -6,7 +6,7 @@
         (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
       <br><br>
   
-      <div *ngFor="let odd of oddNumbers"  
+   <!--    <div *ngFor="let odd of oddNumbers"  
         [ngClass]="'red'"
         [ngStyle]="{'background-color' :  'yellow'}">          
         <ng-template [ngIf]="onlyOdd">
@@ -19,8 +19,18 @@
         <ng-template [ngIf]="!onlyOdd">
          <p> {{ even }}</p>
       </ng-template> 
-     </div>
+     </div> -->
 
+    <div  *appUnless ="!onlyOdd">
+      <div *ngFor="let odd of oddNumbers"  
+        [ngClass]="'red'"
+        [ngStyle]="{'background-color' :  'yellow'}">          
+        
+          <p> {{ odd }}</p>   
+      </div>
+    </div>
+
+ 
      <p appBasicHighlight> My first custom directive</p>
      <p appBetterHighlight [defaultColor] = "'pink'" [highlightColor]="'blue'">This is better custome direcitive using Renderer2.</p>
     </div>
