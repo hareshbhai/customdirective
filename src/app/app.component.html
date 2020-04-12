@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+  
+      <div *ngFor="let odd of oddNumbers"  
+        [ngClass]="'red'"
+        [ngStyle]="{'background-color' :  'yellow'}">          
+        <ng-template [ngIf]="onlyOdd">
+          <p> {{ odd }}</p>
+        </ng-template> 
+      </div>
+
+      <div *ngFor="let even of evenNumbers"
+      [ngStyle]="{'background-color' :  'green'}" >          
+        <ng-template [ngIf]="!onlyOdd">
+         <p> {{ even }}</p>
+      </ng-template> 
+     </div>
+
+     <p appBasicHighlight> My first custom directive</p>
+    </div>
+  </div>
+</div>
